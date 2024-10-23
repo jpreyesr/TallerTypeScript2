@@ -29,10 +29,18 @@ function renderCoursesInTable(series) {
 function showDetail(id) {
     var selectedSerie = series.find(function (serie) { return serie.id === id; });
     if (selectedSerie) {
+        // Mostrar título, imagen y descripción
         serieTitle.innerText = selectedSerie.name;
         serieImage.src = selectedSerie.image;
         serieDescription.innerText = selectedSerie.description;
-        serieChannel.innerText = selectedSerie.url; // Now it just shows the URL as plain text
+        // Mostrar el canal como enlace si la URL está disponible
+        if (selectedSerie.url) {
+            serieChannel.innerHTML = "<a href=\"".concat(selectedSerie.url, "\" target=\"_blank\">").concat(selectedSerie.channel, "</a>");
+        }
+        else {
+            serieChannel.innerText = selectedSerie.channel;
+        }
+        // Mostrar el modal
         var modal = document.getElementById('serie-detail');
         modal.style.display = 'block';
     }
