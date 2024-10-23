@@ -32,7 +32,7 @@ function showDetail(id) {
         serieTitle.innerText = selectedSerie.name;
         serieImage.src = selectedSerie.image;
         serieDescription.innerText = selectedSerie.description;
-        serieChannel.innerHTML = "<a href=\"".concat(selectedSerie.url, "\" target=\"_blank\">").concat(selectedSerie.channel, "</a>");
+        serieChannel.innerText = selectedSerie.url; // Now it just shows the URL as plain text
         var modal = document.getElementById('serie-detail');
         modal.style.display = 'block';
     }

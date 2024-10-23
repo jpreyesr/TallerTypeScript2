@@ -1,22 +1,17 @@
 import { Serie } from './Serie.js';
 import { series } from './data.js';
 
-
 let seriesTbody: HTMLElement = document.getElementById('series')!;
 const totalSeries: HTMLElement = document.getElementById("total-series")!;
-
 
 const serieTitle: HTMLElement = document.getElementById('serie-title')!;
 const serieImage: HTMLImageElement = document.getElementById('serie-image') as HTMLImageElement;
 const serieDescription: HTMLElement = document.getElementById('serie-description')!;
 const serieChannel: HTMLElement = document.getElementById('serie-channel')!;
 
-
 renderCoursesInTable(series);
 
-
 totalSeries.innerHTML = `${promedioSeries(series)}`;
-
 
 declare global {
   interface Window {
@@ -24,7 +19,6 @@ declare global {
     closeModal: () => void;
   }
 }
-
 
 function renderCoursesInTable(series: Serie[]): void {
   console.log('Desplegando series');
@@ -38,7 +32,6 @@ function renderCoursesInTable(series: Serie[]): void {
     seriesTbody.appendChild(trElement);
   });
 
-  
   let links = document.querySelectorAll('.serie-link');
   links.forEach(link => {
     link.addEventListener('click', (event) => {
@@ -52,7 +45,6 @@ function renderCoursesInTable(series: Serie[]): void {
   });
 }
 
-
 function showDetail(id: number): void {
   const selectedSerie = series.find(serie => serie.id === id);
   if (selectedSerie) {
@@ -60,27 +52,23 @@ function showDetail(id: number): void {
     serieTitle.innerText = selectedSerie.name;
     serieImage.src = selectedSerie.image;
     serieDescription.innerText = selectedSerie.description;
-    serieChannel.innerHTML = `<a href="${selectedSerie.url}" target="_blank">${selectedSerie.channel}</a>`;
-
+    serieChannel.innerText = selectedSerie.url;  // Now it just shows the URL as plain text
     
     const modal = document.getElementById('serie-detail')!;
     modal.style.display = 'block';
   }
 }
 
-
 function closeModal(): void {
   const modal = document.getElementById('serie-detail')!;
   modal.style.display = 'none';
 }
-
 
 function promedioSeries(series: Serie[]): number {
   let totalSeasons: number = 0;
   series.forEach((serie) => totalSeasons += serie.seasons);
   return totalSeasons / series.length;
 }
-
 
 window.showDetail = showDetail;
 window.closeModal = closeModal;
