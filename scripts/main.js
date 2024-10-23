@@ -33,12 +33,12 @@ function showDetail(id) {
         serieTitle.innerText = selectedSerie.name;
         serieImage.src = selectedSerie.image;
         serieDescription.innerText = selectedSerie.description;
-        // Mostrar el canal como enlace si la URL está disponible
         if (selectedSerie.url) {
-            serieChannel.innerHTML = "<a href=\"".concat(selectedSerie.url, "\" target=\"_blank\">").concat(selectedSerie.channel, "</a>");
+            serieChannel.innerHTML = "<a href=\"".concat(selectedSerie.url, "\" target=\"_blank\">").concat(selectedSerie.url, "</a>");
         }
         else {
             serieChannel.innerText = selectedSerie.channel;
+            serieDescription.innerText = selectedSerie.description;
         }
         // Mostrar el modal
         var modal = document.getElementById('serie-detail');

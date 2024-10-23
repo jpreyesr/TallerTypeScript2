@@ -9,6 +9,7 @@ const serieImage: HTMLImageElement = document.getElementById('serie-image') as H
 const serieDescription: HTMLElement = document.getElementById('serie-description')!;
 const serieChannel: HTMLElement = document.getElementById('serie-channel')!;
 
+
 renderCoursesInTable(series);
 
 totalSeries.innerHTML = `${promedioSeries(series)}`;
@@ -53,11 +54,12 @@ function showDetail(id: number): void {
     serieImage.src = selectedSerie.image;
     serieDescription.innerText = selectedSerie.description;
     
-    // Mostrar el canal como enlace si la URL está disponible
+    
     if (selectedSerie.url) {
-      serieChannel.innerHTML = `<a href="${selectedSerie.url}" target="_blank">${selectedSerie.channel}</a>`;
+      serieChannel.innerHTML = `<a href="${selectedSerie.url}" target="_blank">${selectedSerie.url}</a>`;
     } else {
       serieChannel.innerText = selectedSerie.channel;
+      serieDescription.innerText = selectedSerie.description;
     }
 
     // Mostrar el modal
