@@ -42,7 +42,15 @@ function showDetail(id) {
         serieImage.src = selectedSerie.image;
         serieDescription.innerText = selectedSerie.description;
         serieChannel.innerHTML = "<a href=\"".concat(selectedSerie.url, "\" target=\"_blank\">").concat(selectedSerie.channel, "</a>");
+        // Mostrar el modal
+        var modal = document.getElementById('serie-detail');
+        modal.style.display = 'block';
     }
+}
+// Función para cerrar el modal
+function closeModal() {
+    var modal = document.getElementById('serie-detail');
+    modal.style.display = 'none';
 }
 // Función para calcular el promedio de temporadas
 function promedioSeries(series) {
@@ -50,5 +58,6 @@ function promedioSeries(series) {
     series.forEach(function (serie) { return totalSeasons += serie.seasons; });
     return totalSeasons / series.length;
 }
-// Asignamos la función `showDetail` al objeto global `window` para que sea accesible si es necesario
+// Asignamos las funciones `showDetail` y `closeModal` al objeto global `window` para que sean accesibles
 window.showDetail = showDetail;
+window.closeModal = closeModal;

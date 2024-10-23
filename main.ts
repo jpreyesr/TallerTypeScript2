@@ -17,10 +17,11 @@ renderCoursesInTable(series);
 // Mostramos el promedio de temporadas
 totalSeries.innerHTML = `${promedioSeries(series)}`;
 
-// Declaramos que la función showDetail pertenece a window
+// Declaramos que las funciones showDetail y closeModal pertenecen a window
 declare global {
   interface Window {
     showDetail: (id: number) => void;
+    closeModal: () => void;
   }
 }
 
@@ -60,7 +61,17 @@ function showDetail(id: number): void {
     serieImage.src = selectedSerie.image;
     serieDescription.innerText = selectedSerie.description;
     serieChannel.innerHTML = `<a href="${selectedSerie.url}" target="_blank">${selectedSerie.channel}</a>`;
+
+    // Mostrar el modal
+    const modal = document.getElementById('serie-detail')!;
+    modal.style.display = 'block';
   }
+}
+
+// Función para cerrar el modal
+function closeModal(): void {
+  const modal = document.getElementById('serie-detail')!;
+  modal.style.display = 'none';
 }
 
 // Función para calcular el promedio de temporadas
@@ -70,5 +81,6 @@ function promedioSeries(series: Serie[]): number {
   return totalSeasons / series.length;
 }
 
-// Asignamos la función `showDetail` al objeto global `window` para que sea accesible si es necesario
+// Asignamos las funciones `showDetail` y `closeModal` al objeto global `window` para que sean accesibles
 window.showDetail = showDetail;
+window.closeModal = closeModal;
