@@ -48,12 +48,19 @@ function renderCoursesInTable(series: Serie[]): void {
 function showDetail(id: number): void {
   const selectedSerie = series.find(serie => serie.id === id);
   if (selectedSerie) {
-    
+    // Mostrar título, imagen y descripción
     serieTitle.innerText = selectedSerie.name;
     serieImage.src = selectedSerie.image;
     serieDescription.innerText = selectedSerie.description;
-    serieChannel.innerText = selectedSerie.url;  // Now it just shows the URL as plain text
     
+    // Mostrar el canal como enlace si la URL está disponible
+    if (selectedSerie.url) {
+      serieChannel.innerHTML = `<a href="${selectedSerie.url}" target="_blank">${selectedSerie.channel}</a>`;
+    } else {
+      serieChannel.innerText = selectedSerie.channel;
+    }
+
+    // Mostrar el modal
     const modal = document.getElementById('serie-detail')!;
     modal.style.display = 'block';
   }
