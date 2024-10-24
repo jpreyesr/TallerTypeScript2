@@ -1,9 +1,56 @@
-import { Serie } from './Serie.js';
 export var series = [
-    new Serie(1, "Breaking Bad", "AMC", 5, "Set and filmed in Albuquerque, New Mexico, the series tells the story of Walter White, a struggling and depressed high school chemistry teacher who is diagnosed with lung cancer", "https://www.amc.com/shows/breaking-bad", "https://i.imgur.com/GGje0vc.jpg"),
-    new Serie(2, "Orange Is the New Black", "Netflix", 6, "The series begins revolving around Piper Chapman, a woman in her thirties living in New York City who is sentenced to 15 months in Litchfield Penitentiary", "https://www.netflix.com/co/title/70242311", "https://i.imgur.com/EvKe48G.jpg"),
-    new Serie(3, "Game of Thrones", "HBO", 7, "American fantasy drama", "https://www.hbo.com/game-of-thrones", "https://i.imgur.com/TDCEV1S.jpg"),
-    new Serie(4, "The Big Bang Theory", "CBS", 12, "Leonard and Sheldon are brilliant physicists—geniuses in the laboratory but socially challenged everywhere else. Enter beautiful, street-smart neighbor Penny, who aims to teach them a thing or two about life. Despite their on-again, off-again relationship in the past, Leonard and Penny have finally gotten married. Even Sheldon has found a female companion, entering into a relationship agreement with neurobiologist Amy Farrah Fowler, and he recently took their relationship to the next level by marrying her after a long courtship. In their free time, Leonard and Sheldon enjoy fantasy role-playing games with their ever-expanding universe of friends, including fellow scientists Koothrappali, Wolowitz, and Wolowitz’s adorable microbiologist wife, Bernadette, who is adjusting to life with their two children.", "https://www.cbs.com/shows/big_bang_theory/about/", "https://i.imgur.com/uAEpVWk.jpg"),
-    new Serie(5, "Sherlock", "BBC", 4, "Sherlock depicts consulting detective Sherlock Holmes (Benedict Cumberbatch) solving various mysteries in modern-day London. Holmes is assisted by his flatmate and friend, Dr John Watson (Martin Freeman), who has returned from military service in Afghanistan with the Royal Army Medical Corps", "https://www.bbc.co.uk/programmes/b018ttws", "https://i.imgur.com/02B7qhj.jpg"),
-    new Serie(6, "A Very English Scandal", "BBC", 2, "A Very English Scandal is a fact-based three-part British television comedy-drama miniseries based on John Preston's book of the same name.", "https://www.bbc.co.uk/programmes/p065smy4", "https://i.imgur.com/D4y3DrQ.jpg"),
+    {
+        id: 1,
+        name: "Breaking Bad",
+        channel: "AMC",
+        seasons: 5,
+        image: "https://i.ytimg.com/vi/O1gFxMoBAVw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA0wrPQK0a1Q2zFWWz_N2woRjT6Tg",
+        description: "Un profesor de Química de secundaria con cáncer terminal se asocia a un exestudiante para asegurar el futuro de su familia al fabricar y vender metanfetamina",
+        url: "https://www.amc.com/shows/breaking-bad"
+    },
+    {
+        id: 2,
+        name: "Orange is the new Black",
+        channel: "Netflix",
+        seasons: 6,
+        image: "https://media.glamour.mx/photos/6190c64df5ed039ceea8dc60/3:2/w_840,h_560,c_limit/154794.jpg",
+        description: "Esta serie original de Netflix está basada en el libro del mismo título. Obligada a cambiar sus trajes de poder por el naranja de la prisión, Chapman se abre camino a través del sistema penitenciario y se adapta a la vida tras las rejas, entablando amistad con las muchas personas excéntricas, inusuales e inesperadas que conoce.",
+        url: "https://www.netflix.com/co/title/70242311"
+    },
+    {
+        id: 3,
+        name: "Game of Thrones",
+        channel: "HBO",
+        seasons: 7,
+        image: "https://m.media-amazon.com/images/S/pv-target-images/96a1cb76cffa422ccf79015c0240ccdb89784c27109a836604d2018a8a82578f.jpg",
+        description: "Como bien sabemos, Game of Thrones se basa en la lucha de poder por los Siete Reinos de las familias Baratheon, Lannister, Stark y Targaryen. Esta última familia únicamente está representada por Daenerys Targaryen, la Madre de Dragones.",
+        url: "https://www.hbo.com/game-of-thrones"
+    },
+    {
+        id: 4,
+        name: "The Big Bang Theory",
+        channel: "CBS",
+        seasons: 12,
+        image: "https://beam-images.warnermediacdn.com/BEAM_LWM_DELIVERABLES/c8ea8e19-cae7-4683-9b62-cdbbed744784/914da85b-244a-11ef-8e04-12093494333d?host=wbd-images.prod-vod.h264.io&partner=beamcom",
+        description: "La serie gira en torno a un grupo de amigos científicos y geeks. La historia sigue a Sheldon Cooper, un brillante pero socialmente torpe físico teórico, y Leonard Hofstadter, un físico experimental más emocional y accesible.",
+        url: "https://www.cbs.com/shows/big_bang_theory/about/"
+    },
+    {
+        id: 5,
+        name: "Sherlock",
+        channel: "BBC",
+        seasons: 4,
+        image: "https://www.formulatv.com/images/series/posters/400/481/dest_1.jpg",
+        description: "Ubicada en el Londres del siglo XXI, la serie sigue los pasos del excéntrico detective Sherlock Holmes junto a su compañero el doctor John H. Watson, en su búsqueda por resolver los brutales crímenes que se van desarrollando.",
+        url: "https://www.bbc.co.uk/programmes/b018ttws"
+    },
+    {
+        id: 6,
+        name: "A Very English Scandal",
+        channel: "BBC",
+        seasons: 2,
+        image: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15526450_b_v13_ao.jpg",
+        description: "Situada a finales de la década del 60, la homosexualidad acaba de ser despenalizada, y Thorpe, líder del partido liberal y el líder más joven de cualquier partido político británico en cien años, tiene un secreto que está desesperado por ocultar.",
+        url: "https://www.bbc.co.uk/programmes/p065smy4"
+    }
 ];
